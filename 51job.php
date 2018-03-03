@@ -1,0 +1,100 @@
+<?php
+
+
+$page = 1;
+if($_GET['page']!=''){
+	$page = $_GET['page'];
+}
+
+
+$url = "http://search.51job.com/list/030200,000000,0000,00,2,99,%25E5%2589%258D%25E7%25AB%25AF%25E5%25BC%2580%25E5%258F%2591,2,".$page.".html?
+
+lang=c&stype=1&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=5&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=";
+$ch = curl_init();
+curl_setopt ($ch, CURLOPT_URL, $url);
+curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT,10);
+$dxycontent = curl_exec($ch);
+echo $dxycontent;
+?>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- <ul class="searchList">
+	<li>
+		<a href="index.php?searchin=eon610&page=1">tmall list</a>
+	</li>
+	<li>
+		<a href="index2.php?searchin=543858094954">tmall page</a>
+	</li>
+	<li>
+		<a href="taobaolist.php?searchin=eon610&page=1">taobao list</a>
+	</li>
+</ul>
+
+<div class="clear">&nbsp;</div>
+
+<form action="index.php" method="get" target="_blank">
+	<input name="searchin" type="text" >
+	<input name="page" type="text" >
+	<input type="submit" value="search">
+</form> -->
+
+
+<div id="show">
+
+	
+</div>
+
+<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+
+<script>
+
+$(function(){
+
+	$(".header,.dw_wp,.footer").hide();
+
+
+	$(".el").each(function(index, el) {
+		if(index>12){
+			console.log($(this).find(".t1").text().trim());
+			console.log($(this).find(".t2").text().trim());
+			console.log($(this).find(".t3").text().trim());
+			console.log($(this).find(".t4").text().trim());
+			console.log($(this).find(".t5").text().trim());
+
+			var td1 = $(this).find(".t1").text().trim();
+			var td2 = $(this).find(".t2").text().trim();
+			var td3 = $(this).find(".t3").text().trim();
+			var td4 = $(this).find(".t4").text().trim();
+			var td5 = $(this).find(".t5").text().trim();
+
+			$("<table class='job'><tr><td><strong>"+td1+"</strong></td><td>"+td2+"</td><td>"+td3+"</td><td>"+td4+"</td><td>"+td5+"</td></tr></table>").appendTo($("#show"));
+
+		}
+		
+	});
+
+
+	
+
+
+
+	/*jsontxt.item.forEach( function(element, index) {
+
+
+		var divbox = $("<table><tr><td><strong>"+element.item_id+"</strong></td><td>"+element.price+"</td><td>"+element.shop_name+"</td></table>").appendTo($("#show"));
+
+		console.log(element.url);
+	});*/
+
+
+
+
+
+
+
+})
+	
+</script>

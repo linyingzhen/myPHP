@@ -1,0 +1,39 @@
+* {
+		margin:0;
+		padding:0;
+	}
+	.searchList {
+		list-style: none;
+	}
+	.searchList li {
+		float: left;
+		
+		
+	}
+	.searchList li a {
+		display: inline-block;
+		text-decoration: none;
+		font-size: 13px;
+		background: black;
+		color:white;
+		margin-right: 20px;
+		padding: 10px;
+
+	}
+	.clear {
+		clear: both;
+	}
+	#show {
+		font-size: 13px;
+		color: black;
+		line-height: 1.2;
+		margin-top: 20px;
+
+	}
+
+
+.job tr td {
+	width: 300px;
+	padding-right: 20px;
+}	
+
