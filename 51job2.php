@@ -33,15 +33,11 @@ echo $dxycontent;
 $(function(){
 
 	$(".header,.dw_wp,.footer").hide();
+	$(".title").remove();
 
 
 	$(".el").each(function(index, el) {
-		if(index>12){
-			console.log($(this).find(".t1").text().trim());
-			console.log($(this).find(".t2").text().trim());
-			console.log($(this).find(".t3").text().trim());
-			console.log($(this).find(".t4").text().trim());
-			console.log($(this).find(".t5").text().trim());
+		if(index>0){
 
 			var td1 = $(this).find(".t1").text().trim();
 			var td2 = $(this).find(".t2").text().trim();
@@ -49,7 +45,11 @@ $(function(){
 			var td4 = $(this).find(".t4").text().trim();
 			var td5 = $(this).find(".t5").text().trim();
 
-			$("<table class='job'><tr><td><strong>"+td1+"</strong></td><td>"+td2+"</td><td>"+td3+"</td><td>"+td4+"</td><td>"+td5+"</td></tr></table>").appendTo($("#show"));
+			if(td1 != "") {
+				$("<table class='job'><tr><td><strong>"+td1+"</strong></td><td>"+td2+"</td><td>"+td3+"</td><td>"+td4+"</td><td>"+td5+"</td></tr></table>").appendTo($("#show"));
+			}
+
+			
 
 		}
 		
