@@ -7,13 +7,13 @@ if($_GET['page']!=''){
 }
 
 
-$url = "http://search.51job.com/list/030200,000000,0000,00,2,99,%25E5%2589%258D%25E7%25AB%25AF%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588,2,".$page.".html?lang=c&stype=1&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=21&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=";
-
-
+$url = "https://search.51job.com/list/030200,000000,0000,00,2,99,%25E5%2589%258D%25E7%25AB%25AF%25E5%25B7%25A5%25E7%25A8%258B%25E5%25B8%2588,2,".$page.".html?lang=c&stype=1&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=21&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=";
 $ch = curl_init();
 curl_setopt ($ch, CURLOPT_URL, $url);
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT,10);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,false);
 $dxycontent = curl_exec($ch);
 echo $dxycontent;
 ?>
